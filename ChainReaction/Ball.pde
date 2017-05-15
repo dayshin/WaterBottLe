@@ -42,10 +42,10 @@ class Ball{
     dx = 0;
     dy = 0;
     for (int i = 0; i < 100; i++){
-      rad = rad * 1.5;
+      rad = rad + 1.1;
     }
     while (rad > 0){
-       rad = rad - 1; 
+       rad = rad - 1.1; 
     }
   }
   
@@ -54,5 +54,8 @@ class Ball{
   }
   float getY(){
      return y; 
+  }
+  float getR(){
+     return rad; 
   }
 }
