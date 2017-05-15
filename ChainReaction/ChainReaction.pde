@@ -8,6 +8,7 @@
      for( int i=0;i<Balls.length;i++){
        Balls[i] = new Ball();
      }
+  }
      
  void draw(){
     background(255);
