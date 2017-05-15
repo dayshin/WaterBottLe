@@ -1,31 +1,18 @@
-ArrayList<Ball> balls;
-
-void setup(){
-  size(720,720);
-  frameRate(60);
-  noStroke();
-  balls = new ArrayList<Ball>(20);
-  for (int i = 0; i < 20; i++) {
-    balls.add(new Ball((int)random(20) + 20));    
+  Ball[] balls;
+  boolean reactionStarted;
+  
+  void setup() { 
+     size(600,600);
+     reactionStarted = false; 
+     balls = new Ball[25];
+     for( int i=0;i<Balls.length;i++){
+       Balls[i] = new Ball();
+     }
   }
-}
-
-void draw() {
-  background(0);
-  ArrayList<Ball> explosions = new ArrayList<Ball>();
-  for(Ball b : balls) {
-    if(b.state > 0) { explosions.add(b); }
+     
+ void draw(){
+    background(255);
+    for(int i=0; i< ball.length -1; i++){
+      ball[i].display();
+    }
   }
-  for(int i = 0; i < balls.size(); i++) {
-   balls.get(i).frame(explosions);
-  }
-}
-
-void mousePressed() {
-  balls.add(new Ball(mouseX, mouseY));
-}
-/*
-void mouseDragged() {
-  balls.add(new Ball((int)random(20) + 20));
-}
-*/
